@@ -1,0 +1,160 @@
+/* --- 1. Estilos Globales y Reset --- */
+:root {
+    --primary-color: #007bff; /* Azul vibrante */
+    --secondary-color: #28a745; /* Verde para avance */
+    --tertiary-color: #ffc107; /* Amarillo para demos */
+    --background-light: #f8f9fa; /* Fondo muy claro */
+    --text-dark: #343a40; /* Texto oscuro */
+    --card-bg: #ffffff; /* Fondo de tarjetas */
+    --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--background-light);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* --- 2. Encabezado (Hero) --- */
+.hero {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: var(--shadow-light);
+}
+
+.company-name {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-size: 1.2em;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+h2 {
+    font-size: 2em;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+/* --- 3. Sección de Integrantes --- */
+.members-section {
+    margin-bottom: 50px;
+}
+
+.member-list {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.member-card {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-light);
+    text-align: center;
+    width: calc(33% - 20px); /* Para 3 tarjetas en una fila */
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: transform 0.3s;
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* --- 4. Sección de Botones de Avance --- */
+.progress-section {
+    text-align: center;
+}
+
+.progress-section p {
+    margin-bottom: 30px;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column; /* Apilados verticalmente */
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.progress-button {
+    display: block;
+    padding: 15px 25px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+/* Estilos específicos de cada botón */
+.progress-button.primary {
+    background-color: var(--primary-color);
+}
+.progress-button.secondary {
+    background-color: var(--secondary-color);
+}
+.progress-button.tertiary {
+    background-color: #dc3545; /* Un color de advertencia, ejemplo: Rojo */
+}
+
+.progress-button:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+}
+
+/* --- 5. Pie de Página --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--text-dark);
+    color: var(--background-light);
+    margin-top: 50px;
+    font-size: 0.9em;
+}
+
+/* --- Adaptación para Móviles (Responsividad) --- */
+@media (max-width: 768px) {
+    .company-name {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .member-list {
+        flex-direction: column; /* Las tarjetas se apilan en móviles */
+    }
+
+    .member-card {
+        width: 100%;
+    }
+}
