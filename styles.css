@@ -8,7 +8,9 @@
     --text-dark: #2c3e50; /* Gris muy oscuro/carbón */
     --card-bg: #ffffff; /* Fondo de tarjetas */
     --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
-    
+    --salar-reflection: #6fa8dc;
+    --salar-sky: #e0f7fa; /* Color celeste claro del cielo */
+
     /* Tipografía formal */
     --font-heading: 'Georgia', serif; 
     --font-body: 'Helvetica Neue', Arial, sans-serif;
@@ -171,48 +173,94 @@ h2 {
 /* --- 4. Sección de Botones de Avance --- */
 .progress-section {
     text-align: center;
+    /* Nuevo fondo suave para ver el efecto cristal */
+    background-color: #f0f4f7; /* Gris azulado muy pálido */
+    padding: 40px 20px;
+    border-radius: 8px;
+    margin-bottom: 50px; /* Asegurar margen después de la sección */
 }
 
 .progress-section p {
+    /* Más espaciado en la descripción del avance */
     margin-bottom: 40px;
+    font-size: 1.05em;
+    color: #555;
 }
 
 .button-group {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 20px; /* Espacio uniforme entre todos los botones */
     max-width: 550px;
     margin: 0 auto;
 }
 
 .progress-button {
+    /* Estilos Base Comunes a TODOS los botones */
     display: block;
     padding: 18px 30px;
     text-decoration: none;
     color: white;
-    border-radius: 4px; /* Bordes menos redondeados */
+    border-radius: 4px; 
     font-size: 1.1em;
     font-weight: bold;
     text-transform: uppercase;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Transiciones unificadas */
     border: none;
+    letter-spacing: 0.5px;
 }
 
-/* Estilos específicos de cada botón */
+/* Estilos de Hover (Comunes para la formalidad) */
+.progress-button:hover {
+    opacity: 0.95; /* Cambio de opacidad sutil */
+    transform: translateY(-2px); /* Un ligero 'levantamiento' formal */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra al pasar el ratón */
+}
+
+/* --- Estilos Específicos por Tipo de Botón (Avance y Final) --- */
+
 .progress-button.primary {
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); /* Azul Marino Oscuro */
 }
 .progress-button.secondary {
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-color); /* Verde Oscuro */
 }
 .progress-button.tertiary {
-    background-color: var(--tertiary-color); 
+    background-color: var(--tertiary-color); /* Rojo Borgoña */
 }
 
-.progress-button:hover {
-    opacity: 0.9;
-    transform: none; /* Quitar la animación de escala */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+/* --- Estilo del Producto Final (Efecto Salar/Glassmorphism) --- */
+.progress-button.final-product {
+    /* Fondo semi-transparente (Blanco 40%) */
+    background-color: rgba(255, 255, 255, 0.4); 
+    
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); 
+    
+    /* Borde más suave con el color celeste de reflejo */
+    border: 2px solid var(--salar-reflection); 
+    
+    /* Texto oscuro para contraste */
+    color: var(--text-dark); 
+        
+    /* Sombra suave con el color de reflejo celeste */
+    box-shadow: 0 4px 15px rgba(111, 168, 220, 0.4); 
+    
+    font-size: 1.2em; 
+    font-weight: 800;
+}
+
+.progress-button.final-product:hover {
+    /* EFECTO HOVER: Aumenta la transparencia y brillo, NO se llena de color. */
+    background-color: rgba(255, 255, 255, 0.7); /* Se vuelve más transparente/brillante */
+    opacity: 1; 
+    transform: scale(1.03); 
+    
+    /* La sombra se hace más grande y el color del reflejo es más intenso */
+    box-shadow: 0 8px 20px rgba(111, 168, 220, 0.6); 
+    
+    /* El texto puede volverse el color primario para destacarse */
+    color: var(--primary-color); 
 }
 
 /* --- 5. Pie de Página --- */
