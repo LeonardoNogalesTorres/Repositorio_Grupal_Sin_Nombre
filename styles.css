@@ -1,12 +1,17 @@
 /* --- 1. Estilos Globales y Reset --- */
 :root {
-    --primary-color: #007bff; /* Azul vibrante */
-    --secondary-color: #28a745; /* Verde para avance */
-    --tertiary-color: #ffc107; /* Amarillo para demos */
-    --background-light: #f8f9fa; /* Fondo muy claro */
-    --text-dark: #343a40; /* Texto oscuro */
+    /* Paleta Formal y Corporativa */
+    --primary-color: #1f376a; /* Azul Marino Oscuro (Formal) */
+    --secondary-color: #38761d; /* Verde Oscuro (Para éxito/avance) */
+    --tertiary-color: #cc0000; /* Rojo Borgoña (Para advertencia/demo) */
+    --background-light: #f5f5f5; /* Fondo más neutro */
+    --text-dark: #2c3e50; /* Gris muy oscuro/carbón */
     --card-bg: #ffffff; /* Fondo de tarjetas */
-    --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
+    
+    /* Tipografía formal */
+    --font-heading: 'Georgia', serif; 
+    --font-body: 'Helvetica Neue', Arial, sans-serif;
 }
 
 * {
@@ -16,7 +21,7 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: var(--font-body);
     line-height: 1.6;
     color: var(--text-dark);
     background-color: var(--background-light);
@@ -24,65 +29,136 @@ body {
 
 .container {
     max-width: 1000px;
-    margin: 40px auto;
-    padding: 0 20px;
+    margin: 50px auto; /* Más margen para respirar */
+    padding: 0 30px;
 }
 
 /* --- 2. Encabezado (Hero) --- */
 .hero {
     background-color: var(--primary-color);
     color: white;
-    padding: 60px 20px;
+    padding: 80px 30px; /* Más padding */
     text-align: center;
-    box-shadow: var(--shadow-light);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .company-name {
-    font-size: 3em;
-    margin-bottom: 10px;
+    font-family: var(--font-heading);
+    font-size: 3.5em;
+    letter-spacing: 2px; /* Espaciado sutil para formalidad */
+    margin-bottom: 5px;
 }
 
 .tagline {
-    font-size: 1.2em;
-    font-style: italic;
-    opacity: 0.9;
+    font-size: 1.1em;
+    font-style: normal; /* Quitar cursiva para formalidad */
+    opacity: 0.8;
+    margin-top: 15px;
+    text-transform: uppercase; /* Mayúsculas sutiles */
 }
 
 h2 {
-    font-size: 2em;
+    font-family: var(--font-heading);
+    font-size: 2.2em;
     color: var(--primary-color);
-    border-bottom: 2px solid var(--primary-color);
-    padding-bottom: 10px;
-    margin-bottom: 30px;
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 15px;
+    margin-bottom: 40px;
+    text-transform: uppercase; /* Encabezados formales en mayúsculas */
+    letter-spacing: 1px;
 }
+
+/* --- ESTILOS ADICIONALES PARA LA MISIÓN (Añadidos para integración) --- */
+.mission-statement {
+    margin-bottom: 50px;
+    padding: 40px; /* Más padding */
+    background-color: var(--card-bg);
+    border-left: 6px solid var(--secondary-color); /* Usamos el verde para este bloque */
+    border-radius: 4px; /* Bordes menos redondeados */
+    box-shadow: var(--shadow-light);
+}
+
+.mission-statement h2 {
+    color: var(--text-dark);
+    border-bottom: none;
+    margin-bottom: 15px;
+    padding-bottom: 0;
+    font-size: 1.8em;
+}
+
+.mission-statement p {
+    font-size: 1.05em;
+    color: #555;
+    text-align: justify; /* Justificar el texto para un aspecto más formal */
+}
+
+.mission-statement p strong {
+    color: var(--primary-color);
+}
+/* --- FIN ESTILOS ADICIONALES --- */
 
 /* --- 3. Sección de Integrantes --- */
 .members-section {
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
 .member-list {
     display: flex;
-    justify-content: space-around;
-    gap: 20px;
+    justify-content: space-between;
+    gap: 30px;
     flex-wrap: wrap;
 }
 
 .member-card {
-    background-color: var(--card-bg);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: var(--shadow-light);
+    /* Base de la tarjeta */
+    padding: 25px;
+    border-radius: 8px; /* Hacemos el borde un poco más suave */
+    border: none; /* Quitamos el borde sólido */
+    color: white; /* El texto debe ser blanco para contrastar con el degradado */
     text-align: center;
-    width: calc(33% - 20px); /* Para 3 tarjetas en una fila */
-    font-weight: bold;
+    width: calc(33% - 20px);
+    font-weight: 700; /* Texto más grueso */
     font-size: 1.1em;
-    transition: transform 0.3s;
+    letter-spacing: 0.5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: default; /* Indica que no es un enlace */
+}
+
+/* Estilos de Degradado Únicos para cada Miembro */
+.member-card.member-1 {
+    /* Degradado de Azul Marino a Gris Elegante */
+    background: linear-gradient(135deg, #5e51cf 0%, #dd0cb0 100%);
+    box-shadow: 0 5px 15px rgba(207, 94, 198, 0.4);
+}
+
+.member-card.member-2 {
+    /* Degradado de Verde Oscuro a Teal (Acuático) */
+    background: linear-gradient(135deg, #3522e0 0%, #38a798 100%);
+    box-shadow: 0 5px 15px rgba(56, 118, 29, 0.4);
+}
+
+.member-card.member-3 {
+    /* Degradado de Púrpura Oscuro a Borgoña (Distinción) */
+    background: linear-gradient(135deg, #b6aada 0%, #18012e 100%);
+    box-shadow: 0 5px 15px rgba(124, 77, 255, 0.4);
 }
 
 .member-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px); /* Animación de 'levantarse' sutil */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25); /* Sombra más pronunciada al pasar el ratón */
+    border-color: transparent; /* Asegura que no haya borde */
+}
+
+/* Adaptación para Móviles */
+@media (max-width: 768px) {
+    /* ... (El resto del media query, ya estaba) ... */
+    .member-list {
+        flex-direction: column;
+    }
+
+    .member-card {
+        width: 100%;
+    }
 }
 
 /* --- 4. Sección de Botones de Avance --- */
@@ -91,27 +167,28 @@ h2 {
 }
 
 .progress-section p {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .button-group {
     display: flex;
-    flex-direction: column; /* Apilados verticalmente */
-    gap: 15px;
-    max-width: 500px;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 550px;
     margin: 0 auto;
 }
 
 .progress-button {
     display: block;
-    padding: 15px 25px;
+    padding: 18px 30px;
     text-decoration: none;
     color: white;
-    border-radius: 5px;
+    border-radius: 4px; /* Bordes menos redondeados */
     font-size: 1.1em;
     font-weight: bold;
     text-transform: uppercase;
-    transition: background-color 0.3s, transform 0.1s;
+    transition: background-color 0.3s;
+    border: none;
 }
 
 /* Estilos específicos de cada botón */
@@ -122,22 +199,24 @@ h2 {
     background-color: var(--secondary-color);
 }
 .progress-button.tertiary {
-    background-color: #dc3545; /* Un color de advertencia, ejemplo: Rojo */
+    background-color: var(--tertiary-color); 
 }
 
 .progress-button:hover {
     opacity: 0.9;
-    transform: scale(1.02);
+    transform: none; /* Quitar la animación de escala */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* --- 5. Pie de Página --- */
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 25px;
     background-color: var(--text-dark);
     color: var(--background-light);
-    margin-top: 50px;
-    font-size: 0.9em;
+    margin-top: 60px;
+    font-size: 0.85em;
+    border-top: 3px solid var(--secondary-color);
 }
 
 /* --- Adaptación para Móviles (Responsividad) --- */
@@ -147,11 +226,11 @@ footer {
     }
 
     h2 {
-        font-size: 1.5em;
+        font-size: 1.8em;
     }
 
     .member-list {
-        flex-direction: column; /* Las tarjetas se apilan en móviles */
+        flex-direction: column;
     }
 
     .member-card {
