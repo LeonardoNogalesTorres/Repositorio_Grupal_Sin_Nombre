@@ -112,16 +112,23 @@ h2 {
 .member-card {
     /* Base de la tarjeta */
     padding: 25px;
-    border-radius: 8px; /* Hacemos el borde un poco más suave */
-    border: none; /* Quitamos el borde sólido */
-    color: white; /* El texto debe ser blanco para contrastar con el degradado */
+    border-radius: 8px;
+    border: none;
+    color: white; 
+    
+    /* MODIFICACIONES PARA CENTRADO PERFECTO: */
+    display: flex;             /* Habilita Flexbox */
+    align-items: center;       /* Centra verticalmente */
+    justify-content: center;   /* Centra horizontalmente */
+    height: 90px;              /* Fija una altura uniforme para todas las tarjetas */
+    
     text-align: center;
     width: calc(33% - 20px);
-    font-weight: 700; /* Texto más grueso */
+    font-weight: 700;
     font-size: 1.1em;
     letter-spacing: 0.5px;
     transition: transform 0.3s, box-shadow 0.3s;
-    cursor: default; /* Indica que no es un enlace */
+    cursor: default;
 }
 
 /* Estilos de Degradado Únicos para cada Miembro */
