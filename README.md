@@ -5,8 +5,8 @@ Este repositorio centraliza las propuestas y avances de nuestro proyecto. La pá
 
 👥 Nuestro Equipo
 
-David Cruz Huanca
+David Willy Cruz Huanca
 
 Leonardo Nogales Torres
 
-Daniel Maldonado Céspedes
+Daniel Maldonado Cespedes
